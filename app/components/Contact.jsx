@@ -29,7 +29,7 @@ function Contact() {
         }
     };
     return (
-        <div id='Contact' className='w-full px-[12%] py-10 scroll-mt-20'>
+        <div id='contact' className='w-full px-[12%] py-10 scroll-mt-20'>
             <h4 className="text-center mb-2 text-lg font-Ovo">Let me hear from you</h4>
             <h2 className="text-center text-5xl font-Ovo">Contact</h2>
             <p className='text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo'>You have a project? let's discus about it, it's free.</p>
