@@ -47,7 +47,7 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a className="font-Ovo" href="#projects">
+            <a className="font-Ovo" href="#works">
               My Projects
             </a>
           </li>
