@@ -5,11 +5,11 @@ import edu_icon from './edu-icon.png';
 import edu_icon_dark from './edu-icon-dark.png';
 import project_icon from './project-icon.png';
 import project_icon_dark from './project-icon-dark.png';
-import vscode from './vscode.png';
-import firebase from './firebase.png';
+import linkedin from './linkedin.png';
+import twitter from './twitter.png';
 import figma from './figma.png';
 import git from './git.png';
-import mongodb from './mongodb.png';
+import medium from './medium.png';
 import right_arrow_white from './right-arrow-white.png';
 import logo from './logo.png';
 import logo_dark from './logo_dark.png';
@@ -44,11 +44,11 @@ export const assets = {
     edu_icon_dark,
     project_icon,
     project_icon_dark,
-    vscode,
-    firebase,
+    linkedin,
+    twitter,
     figma,
     git,
-    mongodb,
+   medium,
     right_arrow_white,
     logo,
     logo_dark,
@@ -78,40 +78,47 @@ export const assets = {
 
 export const workData = [
     {
-        title: 'Frontend project',
-        description: 'Web Design',
+        title: 'CoinPay Mobile App',
+        description: 'Mobile App',
         bgImage: '/work-1.png',
     },
     {
-        title: 'Geo based app',
+        title: 'Daily Quotes',
         description: 'Mobile App',
         bgImage: '/work-2.png',
     },
     {
         title: 'Photography site',
-        description: 'Web Design',
+        description: 'Web',
         bgImage: '/work-3.png',
     },
     {
-        title: 'UI/UX designing',
-        description: 'UI/UX Design',
+        title: 'PokeApp',
+        description: 'Mobile App',
         bgImage: '/work-4.png',
     },
 ]
 
 export const serviceData = [
-    { icon: assets.web_icon, title: 'Web design', description: 'Web development is the process of building, programming...', link: '' },
-    { icon: assets.mobile_icon, title: 'Mobile app', description: 'Mobile app development involves creating software for mobile devices...', link: '' },
-    { icon: assets.ui_icon, title: 'UI/UX design', description: 'UI/UX design focuses on creating a seamless user experience...', link: '' },
-    { icon: assets.graphics_icon, title: 'Graphics design', description: 'Creative design solutions to enhance visual communication...', link: '' },
+    { icon: assets.web_icon, title: 'Web development', description: 'I deliver a wide range of custom web solutions for small and big businesses in different domains. I create web apps and services that satisfies your needs and even exceeds your expectations.', link: '' },
+    { icon: assets.mobile_icon, title: 'Mobile app development', description: 'I offer native mobile development for iOS, Android and cross-platform/hybrid development using latest modern technologies. I help you decide on the platforms to target and choose a suitable development framework.', link: '' },
+    { icon: assets.ui_icon, title: 'UI/UX design', description: 'I make perplexing technical content sound coherent and free from technical jargons. I write about front-end, back-end and mobile development stuff on blogs, social networks. I can do the same thing for you', link: '' },
+    { icon: assets.graphics_icon, title: 'Technical Writing', description: 'I make perplexing technical content sound coherent and free from technical jargons. I write about front-end, back-end and mobile development stuff on blogs, social networks. I can do the same thing for yu', link: '' },
 ]
 
 export const infoList = [
-    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'HTML, CSS, JavaScript React Js, Next Js' },
-    { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'B.Tech in Computer Science' },
+    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'Html,CSS,JS,Dart,PHP' },
+    { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Tools', description: 'Flutter, NextJS, Node Js, Firebase' },
     { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 5 projects' }
 ];
 
-export const toolsData = [
-    assets.vscode, assets.firebase, assets.mongodb, assets.figma, assets.git
+// export const toolsData = [
+//     icon: assets.linkedin, link:"https://www.linkedin.com/in/kojo-samuel-maglodji-2a1081319/",
+//     icon: assets.twitter,link:"",
+//     icon:  assets.medium,link:"",
+// ];
+export const socialMedia = [
+    { icon:  assets.linkedin,  link: 'https://www.linkedin.com/in/kojo-samuel-maglodji-2a1081319/' },
+    { icon:  assets.twitter,  link: 'https://x.com/kojo_code' },
+    { icon:  assets.medium,  link: 'https://medium.com/@samuelmaglodji' },
 ];
