@@ -9,7 +9,7 @@ function Work() {
         <div id='works' className='w-full px-[12%] py-10 scroll-mt-20'>
             <h4 className="text-center mb-2 text-lg font-Ovo">Projects</h4>
             <h2 className="text-center text-5xl font-Ovo">Some of my selected works</h2>
-            <p className='text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit nostrum rerum illum ipsam quasi dolore? Facilis iure dicta in voluptatem tenetur eum voluptates, minima nostrum earum, autem nam soluta et?</p>
+            <p className='text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo'>This is just an exclusive list of some of my projects. Checkout my github to see what i have been working</p>
             <div className='grid grid-cols-auto my-10 gap-5'>
                 {workData.map((project, index) => (
 
@@ -24,7 +24,9 @@ function Work() {
                             </div>
 
                             <div className='border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition'>
-                                <Image src={assets.send_icon} alt='send icon' className='w-5' />
+                                <a href={project.link} target='_blank'>
+                                    <Image src={assets.send_icon} alt='send icon' className='w-5' />
+                                </a>
                             </div>
                         </div>
                     </div>

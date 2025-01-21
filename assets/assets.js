@@ -78,24 +78,28 @@ export const assets = {
 
 export const workData = [
     {
-        title: 'CoinPay Mobile App',
+        title: 'Bible Quizz App',
         description: 'Mobile App',
         bgImage: '/work-1.png',
+        link: 'https://github.com/kodjozecodeur/bible_quizz_app'
     },
     {
         title: 'Daily Quotes',
         description: 'Mobile App',
         bgImage: '/work-2.png',
+        link: ''
     },
     {
         title: 'Photography site',
         description: 'Web',
         bgImage: '/work-3.png',
+        link: ''
     },
     {
         title: 'PokeApp',
         description: 'Mobile App',
         bgImage: '/work-4.png',
+        link: ''
     },
 ]
 
