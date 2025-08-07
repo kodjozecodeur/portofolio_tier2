@@ -78,28 +78,28 @@ export const assets = {
 
 export const workData = [
   {
-    title: "Productivity Dashboard",
+    title: "Portfolio Creative Sannin",
     description: "Web App",
     bgImage: "/work-1.png",
     technologies: ["React", "Next.js", "Tailwind CSS"],
-    link: "https://productivity-dashboard-ten.vercel.app/",
-    githubUrl: "https://github.com/kodjozecodeur/productivity-dashboard",
+    link: "https://creative-sannin-portofolio-r8i1.vercel.app/",
+    githubUrl: "https://github.com/kodjozecodeur",
   },
   {
-    title: "Afritrade Ecommerce",
+    title: "LandLord App",
     description: "Web App",
     bgImage: "/work-2.png",
-    technologies: ["Flutter", "Dart", "Firebase", "Stripe"],
-    link: "https://github.com/kodjozecodeur/bible_quizz_app",
-    githubUrl: "https://github.com/username/ecommerce",
+    technologies: ["React", "MongoDb", "NodeJs", "ExpressJs"],
+    link: "https://github.com/kodjozecodeur/tenant-manager",
+    githubUrl: "https://github.com/kodjozecodeur/tenant-manager",
   },
   {
-    title: "Hr management Dashboard",
+    title: "The ProAccess",
     description: "Web App",
     bgImage: "/work-3.png",
-    technologies: ["React", "MongoDb", "NodeJs", "ExpressJs"],
-    link: "https://github.com/kodjozecodeur/bible_quizz_app",
-    githubUrl: "https://github.com/username/ecommerce",
+    technologies: ["Backend", "Laravel"],
+    link: "https://theproaccess.com/",
+    githubUrl: "https://github.com/kodjozecodeur",
   },
 ];
 
