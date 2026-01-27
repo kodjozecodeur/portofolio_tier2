@@ -16,13 +16,15 @@ export const metadata = {
   description: "",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, modal }) {
   return (
     <html lang="en" className="scroll-smooth">
       <body
         className={`${outfit.variable} ${ovo.variable} antialiased leading-8 overflow-x-hidden`}
+        suppressHydrationWarning
       >
         {children}
+        {modal}
       </body>
     </html>
   );

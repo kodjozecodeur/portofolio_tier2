@@ -1,4 +1,6 @@
 import { assets } from '@/assets/assets'
+'use client'
+
 import Image from 'next/image'
 import React from 'react'
 import { useState } from 'react';
