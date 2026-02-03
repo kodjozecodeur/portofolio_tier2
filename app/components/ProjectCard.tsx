@@ -2,32 +2,18 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-
-interface Project {
-  slug: string
-  title: string
-  subtitle: string
-  summary: string
-  description: string
-  role: string
-  stack: string[]
-  tags: string[]
-  screenshots: {
-    src: string
-    alt: string
-  }[]
-  links: {
-    live?: string
-    github?: string
-  }
-}
+import { resolveLocalized, useI18n } from '@/app/i18n/I18nProvider'
+import type { Project } from '@/app/data/projects'
 
 interface ProjectCardProps {
   project: Project
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const { locale } = useI18n()
   const firstScreenshot = project.screenshots[0]
+  const title = resolveLocalized(project.title, locale)
+  const summary = resolveLocalized(project.summary, locale)
 
   return (
     <Link
@@ -68,8 +54,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
         {/* Project Title & Summary */}
         <div>
-          <h2 className="text-2xl font-bold text-black dark:text-white">{project.title}</h2>
-          <p className="text-gray-600 dark:text-gray-400 mt-2 line-clamp-2">{project.summary}</p>
+          <h2 className="text-2xl font-bold text-black dark:text-white">{title}</h2>
+          <p className="text-gray-600 dark:text-gray-400 mt-2 line-clamp-2">{summary}</p>
         </div>
       </div>
     </Link>

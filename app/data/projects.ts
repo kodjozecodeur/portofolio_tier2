@@ -1,15 +1,19 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { cache } from 'react'
-import matter from 'gray-matter'
+
+export type LocalizedText = {
+  en?: string
+  fr?: string
+}
 
 export interface Project {
   slug: string
-  title: string
-  subtitle: string
-  summary: string
-  description: string
-  role: string
+  title: string | LocalizedText
+  subtitle: string | LocalizedText
+  summary: string | LocalizedText
+  description: string | LocalizedText
+  role: string | LocalizedText
   stack: string[]
   tags: string[]
   screenshots: {
@@ -22,41 +26,38 @@ export interface Project {
   }
 }
 
-const projectsDir = path.join(process.cwd(), 'content', 'projects')
+const projectsFile = path.join(process.cwd(), 'content', 'projects.json')
 
 const loadProjects = cache(async (): Promise<Project[]> => {
-  const entries = await fs.readdir(projectsDir, { withFileTypes: true })
-  const files = entries.filter((entry) => entry.isFile() && entry.name.endsWith('.md'))
-  const projects = await Promise.all(
-    files.map(async (file) => {
-      const filePath = path.join(projectsDir, file.name)
-      const raw = await fs.readFile(filePath, 'utf8')
-      const { data } = matter(raw)
-      const slug = typeof data.slug === 'string' && data.slug.trim().length > 0
-        ? data.slug.trim()
-        : file.name.replace(/\.md$/, '')
+  const raw = await fs.readFile(projectsFile, 'utf8')
+  const parsed = JSON.parse(raw) as Project[]
+  const normalizeText = (value: unknown) =>
+    typeof value === 'string' || (value && typeof value === 'object') ? value : ''
 
-      return {
-        slug,
-        title: String(data.title ?? ''),
-        subtitle: String(data.subtitle ?? ''),
-        summary: String(data.summary ?? ''),
-        description: String(data.description ?? ''),
-        role: String(data.role ?? ''),
-        stack: Array.isArray(data.stack) ? data.stack.map(String) : [],
-        tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
-        screenshots: Array.isArray(data.screenshots)
-          ? data.screenshots.map((shot: { src?: unknown; alt?: unknown }) => ({
-              src: String(shot?.src ?? ''),
-              alt: String(shot?.alt ?? ''),
-            }))
-          : [],
-        links: typeof data.links === 'object' && data.links !== null ? data.links : {},
-      } satisfies Project
+  return parsed
+    .map((project) => ({
+      ...project,
+      slug: String(project.slug ?? ''),
+      title: normalizeText(project.title),
+      subtitle: normalizeText(project.subtitle),
+      summary: normalizeText(project.summary),
+      description: normalizeText(project.description),
+      role: normalizeText(project.role),
+    stack: Array.isArray(project.stack) ? project.stack.map(String) : [],
+    tags: Array.isArray(project.tags) ? project.tags.map(String) : [],
+    screenshots: Array.isArray(project.screenshots)
+      ? project.screenshots.map((shot) => ({
+          src: String(shot?.src ?? ''),
+          alt: String(shot?.alt ?? ''),
+        }))
+      : [],
+      links: typeof project.links === 'object' && project.links !== null ? project.links : {},
+    }))
+    .sort((a, b) => {
+      const getTitle = (value: Project['title']) =>
+        typeof value === 'string' ? value : value?.en ?? value?.fr ?? ''
+      return getTitle(a.title).localeCompare(getTitle(b.title))
     })
-  )
-
-  return projects.sort((a, b) => a.title.localeCompare(b.title))
 })
 
 export async function getAllProjects(): Promise<Project[]> {

@@ -1,0 +1,202 @@
+[
+  {
+    "slug": "lotie-app",
+    "title": {
+      "en": "Lotié",
+      "fr": "Lotié"
+    },
+    "subtitle": {
+      "en": "Delivery App",
+      "fr": "Application de livraison"
+    },
+    "summary": {
+      "en": "A delivery app based on a credit system that grants a defined number of deliveries.",
+      "fr": "Application de livraison basée sur un système de crédits donnant droit à un nombre défini de livraisons."
+    },
+    "description": {
+      "en": "Lotié is a delivery app that introduces a credit-based model instead of paying per order. Users buy credits that allow a defined number of deliveries, providing more transparency and cost control. The app manages credit purchases, tracking and consumption, along with the full delivery cycle from order to courier tracking. Designed to be simple and fast, Lotié optimizes the user experience while streamlining delivery operations.",
+      "fr": "Lotié est une application de livraison qui introduit un modèle basé sur des crédits plutôt que sur un paiement à chaque commande. Les utilisateurs achètent des crédits leur permettant d’effectuer un nombre défini de livraisons, offrant plus de transparence et de contrôle sur les coûts. L’application gère l’achat, le suivi et la consommation des crédits, ainsi que le cycle complet de livraison, de la commande au suivi du livreur. Conçue pour être simple et performante, Lotié vise à optimiser l’expérience utilisateur tout en facilitant la gestion opérationnelle du service de livraison."
+    },
+    "role": {
+      "en": "Full Stack Developer",
+      "fr": "Développeur Full Stack"
+    },
+    "stack": [
+      "Flutter",
+      "NodeJS",
+      "MongoDB"
+    ],
+    "tags": [
+      "Delivery App",
+      "Flutter",
+      "Laravel",
+      "Mobile",
+      "Crédit",
+      "Logistique"
+    ],
+    "screenshots": [
+      {
+        "src": "/uploads/lotie-shots-1.png",
+        "alt": "Lotié application écran principal"
+      },
+      {
+        "src": "/uploads/lotie-shots-1.png",
+        "alt": "Lotié suivi de livraison"
+      }
+    ],
+    "links": {
+      "live": null,
+      "github": "https://github.com/kodjozecodeur"
+    }
+  },
+  {
+    "slug": "landlord-app",
+    "title": {
+      "en": "LandLord App",
+      "fr": "LandLord App"
+    },
+    "subtitle": {
+      "en": "Web App",
+      "fr": "Application web"
+    },
+    "summary": {
+      "en": "A comprehensive tenant management system for landlords to manage properties, tenants, and payments.",
+      "fr": "Un système complet de gestion des locataires permettant aux propriétaires de gérer biens, locataires et paiements."
+    },
+    "description": {
+      "en": "A full-stack web application designed to help landlords efficiently manage their rental properties. The app includes features for tracking tenants, managing lease agreements, processing payments, and generating reports. Built with a modern tech stack, it provides a seamless experience for property management tasks.",
+      "fr": "Une application web full‑stack conçue pour aider les propriétaires à gérer efficacement leurs biens locatifs. Elle inclut le suivi des locataires, la gestion des baux, le traitement des paiements et la génération de rapports. Construite avec une stack moderne, elle offre une expérience fluide pour les tâches de gestion immobilière."
+    },
+    "role": {
+      "en": "Full Stack Developer",
+      "fr": "Développeur Full Stack"
+    },
+    "stack": [
+      "React",
+      "MongoDB",
+      "Node.js",
+      "Express.js"
+    ],
+    "tags": [
+      "React",
+      "MongoDB",
+      "Node.js",
+      "Express.js",
+      "Full Stack",
+      "Property Management"
+    ],
+    "screenshots": [
+      {
+        "src": "/work-2.png",
+        "alt": "LandLord App dashboard"
+      },
+      {
+        "src": "/work-2.png",
+        "alt": "LandLord App tenant management"
+      }
+    ],
+    "links": {
+      "live": "tenant-manager-one.vercel.app",
+      "github": "https://github.com/kodjozecodeur/tenant-manager/tree/main"
+    }
+  },
+  {
+    "slug": "the-proaccess",
+    "title": {
+      "en": "The ProAccess",
+      "fr": "The ProAccess"
+    },
+    "subtitle": {
+      "en": "Web App",
+      "fr": "Application web"
+    },
+    "summary": {
+      "en": "Platform for managing external talent recruitment for Canadian companies.",
+      "fr": "Plateforme de gestion du recrutement de talents externes pour des entreprises canadiennes."
+    },
+    "description": {
+      "en": "ProAccess is an HR recruitment platform that connects Canadian enterprises with external talent. It centralizes job postings, candidate applications, and recruitment workflows, providing companies with a structured and scalable solution for managing external hiring processes.",
+      "fr": "ProAccess est une plateforme RH de recrutement qui relie les entreprises canadiennes à des talents externes. Elle centralise les offres d’emploi, les candidatures et les workflows de recrutement, offrant une solution structurée et évolutive pour gérer les recrutements externes."
+    },
+    "role": {
+      "en": "Fullstack Developer",
+      "fr": "Développeur Full Stack"
+    },
+    "stack": [
+      "Laravel",
+      "PHP",
+      "MySQL"
+    ],
+    "tags": [
+      "Laravel",
+      "PHP",
+      "Backend",
+      "MySQL"
+    ],
+    "screenshots": [
+      {
+        "src": "/work-3.png",
+        "alt": "The ProAccess dashboard"
+      },
+      {
+        "src": "/work-3.png",
+        "alt": "The ProAccess access management interface"
+      }
+    ],
+    "links": {
+      "live": "https://theproaccess.com/",
+      "github": "https://github.com/kodjozecodeur"
+    }
+  },
+  {
+    "slug": "sms-for-la-reference",
+    "title": {
+      "en": "School Management System – La Référence",
+      "fr": "Système de gestion scolaire – La Référence"
+    },
+    "subtitle": {
+      "en": "Web App",
+      "fr": "Application web"
+    },
+    "summary": {
+      "en": "Web platform for managing academic operations in a private school.",
+      "fr": "Plateforme web pour gérer les opérations académiques d’un établissement privé."
+    },
+    "description": {
+      "en": "A school management system designed to support the daily operations of a private educational institution. The platform centralizes student records, class management, academic data, and administrative workflows, providing staff with a structured and reliable tool to manage school activities efficiently.",
+      "fr": "Un système de gestion scolaire conçu pour soutenir les opérations quotidiennes d’un établissement privé. La plateforme centralise les dossiers des élèves, la gestion des classes, les données académiques et les workflows administratifs, offrant au personnel un outil structuré et fiable pour gérer efficacement les activités scolaires."
+    },
+    "role": {
+      "en": "Full Stack Developer",
+      "fr": "Développeur Full Stack"
+    },
+    "stack": [
+      "Laravel",
+      "PHP",
+      "MySQL"
+    ],
+    "tags": [
+      "Laravel",
+      "PHP",
+      "Web Application",
+      "MySQL",
+      "Education"
+    ],
+    "screenshots": [
+      {
+        "src": "/uploads/shots-1.png",
+        "alt": "School management system dashboard"
+      },
+      {
+        "src": "/uploads/shots-2.png",
+        "alt": "Student and academic management interface"
+      }
+    ],
+    "links": {
+      "live": "",
+      "github": ""
+    }
+  }
+
+
+]

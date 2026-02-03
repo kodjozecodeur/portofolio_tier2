@@ -3,10 +3,13 @@
 import { assets } from "@/assets/assets";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
+import { useI18n } from "@/app/i18n/I18nProvider";
 
 const Navbar = () => {
   const [isScroll, setIsScroll] = useState(false);
   const sideMenuRef = useRef();
+  const [langOpen, setLangOpen] = useState(false);
+  const { t, locale, setLocale } = useI18n();
 
   const openMenu = () => {
     sideMenuRef.current.style.transform = "translateX(-16rem)";
@@ -36,35 +39,75 @@ const Navbar = () => {
         </a>
         <ul className="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3">
           <li>
-            <a href="#top">Home</a>
+            <a href="#top">{t("nav.home")}</a>
           </li>
           <li>
             <a className="font-Ovo" href="#about">
-              About Me
+              {t("nav.about")}
             </a>
           </li>
           <li>
             <a className="font-Ovo" href="#services">
-              My Services
+              {t("nav.services")}
             </a>
           </li>
           <li>
             <a className="font-Ovo" href="#works">
-              My Projects
+              {t("nav.projects")}
             </a>
           </li>
           <li>
             <a className="font-Ovo" href="#contact">
-              Contact Me
+              {t("nav.contact")}
             </a>
           </li>
         </ul>
         <div className="flex items-center gap-4">
+          <div className="relative hidden md:flex">
+            <button
+              type="button"
+              className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-lg hover:bg-gray-100 transition-colors"
+              aria-label={t("nav.language")}
+              onClick={() => setLangOpen((open) => !open)}
+            >
+              {locale === "fr" ? "🇫🇷" : "🇺🇸"}
+            </button>
+            {langOpen && (
+              <div className="absolute right-0 mt-2 w-40 rounded-xl border border-gray-200 bg-white shadow-lg p-2 z-50">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setLocale("en");
+                    setLangOpen(false);
+                  }}
+                  className="w-full flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 text-left"
+                >
+                  <span className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center">
+                    🇺🇸
+                  </span>
+                  {t("nav.language.en")}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setLocale("fr");
+                    setLangOpen(false);
+                  }}
+                  className="w-full flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 text-left"
+                >
+                  <span className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center">
+                    🇫🇷
+                  </span>
+                  {t("nav.language.fr")}
+                </button>
+              </div>
+            )}
+          </div>
           <a
             href="#contact"
             className="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full mt-4 font-Ovo"
           >
-            Contact <Image src={assets.arrow_icon} alt="" className="w-3" />
+            {t("nav.contactCta")} <Image src={assets.arrow_icon} alt="" className="w-3" />
           </a>
           <button className="block md:hidden ml-3" onClick={openMenu}>
             <Image src={assets.menu_black} alt="" className="w-6" />
@@ -84,27 +127,47 @@ const Navbar = () => {
             />
           </div>
           <li>
-            <a href="#top">Home</a>
+            <a href="#top">{t("nav.home")}</a>
           </li>
           <li>
             <a className="font-Ovo" href="#about">
-              About Me
+              {t("nav.about")}
             </a>
           </li>
           <li>
             <a className="font-Ovo" href="#services">
-              My Services
+              {t("nav.services")}
             </a>
           </li>
           <li>
             <a className="font-Ovo" href="#projects">
-              My Projects
+              {t("nav.projects")}
             </a>
           </li>
           <li>
             <a className="font-Ovo" href="#contact">
-              Contact Me
+              {t("nav.contact")}
             </a>
+          </li>
+          <li className="mt-4">
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-lg"
+                onClick={() => setLocale("en")}
+                aria-label={t("nav.language.en")}
+              >
+                🇺🇸
+              </button>
+              <button
+                type="button"
+                className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-lg"
+                onClick={() => setLocale("fr")}
+                aria-label={t("nav.language.fr")}
+              >
+                🇫🇷
+              </button>
+            </div>
           </li>
         </ul>
       </nav>

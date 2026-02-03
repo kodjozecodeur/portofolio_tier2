@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useI18n } from '@/app/i18n/I18nProvider'
 import Image from 'next/image'
 
 interface ProjectCarouselProps {
@@ -11,6 +12,7 @@ interface ProjectCarouselProps {
 }
 
 export default function ProjectCarousel({ screenshots }: ProjectCarouselProps) {
+    const { t } = useI18n()
     const [currentIndex, setCurrentIndex] = useState(0)
 
     const goToPrevious = () => {
@@ -49,7 +51,7 @@ export default function ProjectCarousel({ screenshots }: ProjectCarouselProps) {
                     <button
                         onClick={goToPrevious}
                         className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/70 dark:bg-white/70 text-white dark:text-black rounded-full p-2 hover:bg-black dark:hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
-                        aria-label="Previous image"
+                        aria-label={t('carousel.prev')}
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +70,7 @@ export default function ProjectCarousel({ screenshots }: ProjectCarouselProps) {
                     <button
                         onClick={goToNext}
                         className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/70 dark:bg-white/70 text-white dark:text-black rounded-full p-2 hover:bg-black dark:hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
-                        aria-label="Next image"
+                        aria-label={t('carousel.next')}
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +100,7 @@ export default function ProjectCarousel({ screenshots }: ProjectCarouselProps) {
                                     ? 'bg-black dark:bg-white w-8'
                                     : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
                                 }`}
-                            aria-label={`Go to slide ${index + 1}`}
+                            aria-label={`${t('carousel.goto')} ${index + 1}`}
                         />
                     ))}
                 </div>

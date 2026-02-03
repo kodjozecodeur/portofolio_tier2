@@ -1,5 +1,6 @@
 import { Outfit, Ovo } from "next/font/google";
 import "./globals.css";
+import { I18nProvider } from "./i18n/I18nProvider";
 
 const outfit = Outfit({
   weight:["400", "500", "600", "700"],
@@ -23,8 +24,10 @@ export default function RootLayout({ children, modal }) {
         className={`${outfit.variable} ${ovo.variable} antialiased leading-8 overflow-x-hidden`}
         suppressHydrationWarning
       >
-        {children}
-        {modal}
+        <I18nProvider>
+          {children}
+          {modal}
+        </I18nProvider>
       </body>
     </html>
   );
