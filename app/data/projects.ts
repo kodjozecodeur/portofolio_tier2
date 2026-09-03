@@ -22,6 +22,8 @@ export interface Project {
   }[]
   links: {
     live?: string
+    appStore?: string
+    playStore?: string
     github?: string
   }
 }
@@ -54,9 +56,13 @@ const loadProjects = cache(async (): Promise<Project[]> => {
       links: typeof project.links === 'object' && project.links !== null ? project.links : {},
     }))
     .sort((a, b) => {
+      const getProjectTypeRank = (project: Project) =>
+        project.links.appStore || project.links.playStore ? 0 : 1
       const getTitle = (value: Project['title']) =>
         typeof value === 'string' ? value : value?.en ?? value?.fr ?? ''
-      return getTitle(a.title).localeCompare(getTitle(b.title))
+      const typeOrder = getProjectTypeRank(a) - getProjectTypeRank(b)
+
+      return typeOrder || getTitle(a.title).localeCompare(getTitle(b.title))
     })
 })
 

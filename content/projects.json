@@ -21,11 +21,7 @@
       "en": "Full Stack Developer",
       "fr": "Développeur Full Stack"
     },
-    "stack": [
-      "Flutter",
-      "NodeJS",
-      "MongoDB"
-    ],
+    "stack": ["Flutter", "NodeJS", "MongoDB"],
     "tags": [
       "Delivery App",
       "Flutter",
@@ -45,8 +41,10 @@
       }
     ],
     "links": {
-      "live": null,
-      "github": "https://github.com/kodjozecodeur"
+      "live": "",
+      "playStore": "https://play.google.com/store/apps/details?id=com.lotie.app.lotieapp&pcampaignid=web_share",
+      "appStore": "https://apps.apple.com/us/app/lotie/id6757446272",
+      "github": null
     }
   },
   {
@@ -71,12 +69,7 @@
       "en": "Full Stack Developer",
       "fr": "Développeur Full Stack"
     },
-    "stack": [
-      "React",
-      "MongoDB",
-      "Node.js",
-      "Express.js"
-    ],
+    "stack": ["React", "MongoDB", "Node.js", "Express.js"],
     "tags": [
       "React",
       "MongoDB",
@@ -96,7 +89,7 @@
       }
     ],
     "links": {
-      "live": "tenant-manager-one.vercel.app",
+      "live": "https://tenant-manager-one.vercel.app",
       "github": "https://github.com/kodjozecodeur/tenant-manager/tree/main"
     }
   },
@@ -122,17 +115,8 @@
       "en": "Fullstack Developer",
       "fr": "Développeur Full Stack"
     },
-    "stack": [
-      "Laravel",
-      "PHP",
-      "MySQL"
-    ],
-    "tags": [
-      "Laravel",
-      "PHP",
-      "Backend",
-      "MySQL"
-    ],
+    "stack": ["Laravel", "PHP", "MySQL"],
+    "tags": ["Laravel", "PHP", "Backend", "MySQL"],
     "screenshots": [
       {
         "src": "/work-3.png",
@@ -170,25 +154,15 @@
       "en": "Full Stack Developer",
       "fr": "Développeur Full Stack"
     },
-    "stack": [
-      "Laravel",
-      "PHP",
-      "MySQL"
-    ],
-    "tags": [
-      "Laravel",
-      "PHP",
-      "Web Application",
-      "MySQL",
-      "Education"
-    ],
+    "stack": ["Laravel", "PHP", "MySQL"],
+    "tags": ["Laravel", "PHP", "Web Application", "MySQL", "Education"],
     "screenshots": [
       {
         "src": "/uploads/shots-1.png",
         "alt": "School management system dashboard"
       },
       {
-        "src": "/uploads/shots-2.png",
+        "src": "/uploads/shots2.png",
         "alt": "Student and academic management interface"
       }
     ],
@@ -196,7 +170,53 @@
       "live": "",
       "github": ""
     }
+  },
+  {
+    "slug": "conta-a-z",
+    "title": {
+      "en": "Conta A-Z",
+      "fr": "Conta A-Z"
+    },
+    "subtitle": {
+      "en": "Business Management App",
+      "fr": "Application de gestion d'entreprise"
+    },
+    "summary": {
+      "en": "A business management app that helps companies manage sales, expenses, products, stock, customers and financial data from a mobile application.",
+      "fr": "Une application de gestion d'entreprise permettant de gérer les ventes, dépenses, produits, stocks, clients et données financières depuis une application mobile."
+    },
+    "description": {
+      "en": "Conta A-Z is a mobile business management application designed to simplify the day-to-day management of small and medium-sized businesses. The application covers key business operations including product and stock management, sales and invoicing, expenses, purchases, customers and suppliers, as well as financial data exports. It also includes user management and role-based permissions, authentication, notifications, low-stock alerts and document management. The mobile application integrates with the backend services to provide a complete and streamlined business management experience.",
+      "fr": "Conta A-Z est une application mobile de gestion d'entreprise conçue pour simplifier la gestion quotidienne des petites et moyennes entreprises. L'application couvre les principales opérations métier, notamment la gestion des produits et des stocks, les ventes et la facturation, les dépenses, les achats, les clients et fournisseurs, ainsi que l'export des données financières. Elle intègre également la gestion des utilisateurs et des permissions par rôle, l'authentification, les notifications, les alertes de stock bas et la gestion des justificatifs. L'application mobile s'appuie sur les services backend afin d'offrir une expérience complète et fluide de gestion d'entreprise."
+    },
+    "role": {
+      "en": "Mobile Developer",
+      "fr": "Développeur Mobile"
+    },
+    "stack": ["Flutter", "Dart", "Riverpod", "Dio", "REST API"],
+    "tags": [
+      "Business Management",
+      "Flutter",
+      "Mobile",
+      "Accounting",
+      "Stock Management",
+      "Invoicing",
+      "Permissions"
+    ],
+    "screenshots": [
+      {
+        "src": "/uploads/conta-a-z-shots-1.png",
+        "alt": "Conta A-Z application écran principal"
+      },
+      {
+        "src": "/uploads/conta-a-z-shots-2.png",
+        "alt": "Conta A-Z gestion des ventes et factures"
+      }
+    ],
+    "links": {
+      "live": "",
+      "appStore": "https://apps.apple.com/us/app/conta-a-z/id6769405722",
+      "github": null
+    }
   }
-
-
 ]

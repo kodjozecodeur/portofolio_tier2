@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useI18n, resolveLocalized } from '@/app/i18n/I18nProvider'
 import ProjectCarousel from '@/app/components/ProjectCarousel'
+import ProjectLink, { AppleIcon, GooglePlayIcon } from '@/app/components/ProjectLink'
 import type { Project } from '@/app/data/projects'
 
 interface ProjectPageClientProps {
@@ -119,6 +120,20 @@ export default function ProjectPageClient({ project }: ProjectPageClientProps) {
                 </svg>
               </a>
             )}
+            {project.links.appStore && (
+              <ProjectLink
+                href={project.links.appStore}
+                label={t('project.appStore')}
+                icon={<AppleIcon />}
+              />
+            )}
+            {project.links.playStore && (
+              <ProjectLink
+                href={project.links.playStore}
+                label={t('project.playStore')}
+                icon={<GooglePlayIcon />}
+              />
+            )}
             {project.links.github && (
               <a
                 href={project.links.github}
@@ -143,7 +158,7 @@ export default function ProjectPageClient({ project }: ProjectPageClientProps) {
                 {t('project.github')}
               </a>
             )}
-            {!project.links.live && !project.links.github && (
+            {!project.links.live && !project.links.appStore && !project.links.playStore && !project.links.github && (
               <p className="text-gray-600 dark:text-gray-400">{t('project.noPreview')}</p>
             )}
           </div>

@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { resolveLocalized, useI18n } from '@/app/i18n/I18nProvider'
 import type { Project } from '@/app/data/projects'
 import ProjectCarousel from './ProjectCarousel'
+import ProjectLink, { AppleIcon, GooglePlayIcon } from './ProjectLink'
 
 interface ProjectModalProps {
   project: Project
@@ -189,6 +190,20 @@ export default function ProjectModal({ project }: ProjectModalProps) {
                   </svg>
                 </a>
               )}
+              {project.links.appStore && (
+                <ProjectLink
+                  href={project.links.appStore}
+                  label={t('project.appStore')}
+                  icon={<AppleIcon />}
+                />
+              )}
+              {project.links.playStore && (
+                <ProjectLink
+                  href={project.links.playStore}
+                  label={t('project.playStore')}
+                  icon={<GooglePlayIcon />}
+                />
+              )}
               {project.links.github && (
                 <a
                   href={project.links.github}
@@ -213,7 +228,7 @@ export default function ProjectModal({ project }: ProjectModalProps) {
                   {t('project.github')}
                 </a>
               )}
-              {!project.links.live && !project.links.github && (
+              {!project.links.live && !project.links.appStore && !project.links.playStore && !project.links.github && (
                 <p className="text-gray-600 dark:text-gray-400">{t('project.noPreview')}</p>
               )}
             </div>
