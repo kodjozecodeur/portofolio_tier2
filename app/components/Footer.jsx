@@ -15,7 +15,7 @@ function Footer() {
                 < Image src={assets.logo} alt='' className='w-36 mx-auto mb-2' />
                 <div className='w-max flex items-center gap-2 mx-auto'>
                     < Image src={assets.mail_icon} alt='' className='w-6' />
-                    kojocode6@gmail.com
+                    samuelmaglodji@gmail.com
                 </div>
             </div>
             <div className='text-center sm:flex items-center  justify-between border-t border-gray-400 mx-[10%] mt-12 py-6'>
