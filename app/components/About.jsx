@@ -10,8 +10,8 @@ const TENOR_EMBED_SCRIPT = "https://tenor.com/embed.js";
 
 // Replace these placeholders when the projects have public URLs.
 const PROJECT_LINKS = {
-  Accord: "#",
-  Copilot: "#",
+  Accord: "https://accor-ebon.vercel.app/",
+  Copilot: "https://copilot-gamma-red.vercel.app/",
 };
 
 function TenorGif() {
@@ -70,12 +70,15 @@ function About() {
       }
 
       const projectName = match[1];
+      const isPlaceholder = PROJECT_LINKS[projectName] === "#";
       parts.push(
         <a
           key={`${projectName}-${match.index}`}
           href={PROJECT_LINKS[projectName]}
-          aria-label={`${projectName} project link (coming soon)`}
-          onClick={(event) => event.preventDefault()}
+          target={isPlaceholder ? undefined : "_blank"}
+          rel={isPlaceholder ? undefined : "noopener noreferrer"}
+          aria-label={`${projectName} project link${isPlaceholder ? " (coming soon)" : ""}`}
+          onClick={isPlaceholder ? (event) => event.preventDefault() : undefined}
           className="font-medium text-gray-900 underline decoration-gray-400 underline-offset-4 transition-colors hover:decoration-gray-900 dark:text-white dark:decoration-gray-500 dark:hover:decoration-white"
         >
           {projectName}
