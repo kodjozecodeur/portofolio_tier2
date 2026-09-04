@@ -28,7 +28,7 @@ export default function ProjectsSectionClient({ projects }: ProjectsSectionClien
         ))}
       </div>
       <a
-        href="https://github.com/kodjozecodeur/README"
+        href="https://github.com/kodjozecodeur"
         className="w-max flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300 border-[0.5px] border-gray-700 dark:border-gray-300 rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover dark:hover:bg-darkHover duration-500 transition-colors"
       >
         {t('projects.showMore')}

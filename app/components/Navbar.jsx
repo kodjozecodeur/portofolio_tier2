@@ -30,7 +30,7 @@ const Navbar = () => {
   return (
     <div>
       <nav className={`w-full fixed  px-5 lg:px-8 xl:px-[8%] flex items-center justify-between ${isScroll ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm" : ""}`}>
-        <a href="http://">
+        <a href="#top" aria-label="Back to the top">
           <Image
             src={assets.logo}
             alt=""
@@ -140,7 +140,7 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a className="font-Ovo" href="#projects">
+            <a className="font-Ovo" href="#works">
               {t("nav.projects")}
             </a>
           </li>

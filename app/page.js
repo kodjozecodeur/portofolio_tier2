@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 
 export default function Home() {
   return (
-    <>
+    <main id="top">
       <Navbar />
       <Header />
       <About />
@@ -16,6 +16,6 @@ export default function Home() {
       <ProjectsSection />
       <Contact />
       <Footer />
-    </>
+    </main>
   );
 }
