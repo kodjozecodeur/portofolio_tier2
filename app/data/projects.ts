@@ -9,6 +9,8 @@ export type LocalizedText = {
 
 export interface Project {
   slug: string
+  featured?: boolean
+  featuredOrder?: number
   title: string | LocalizedText
   subtitle: string | LocalizedText
   summary: string | LocalizedText

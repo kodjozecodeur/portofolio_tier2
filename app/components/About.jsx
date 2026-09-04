@@ -3,10 +3,90 @@
 import { assets, infoList, socialMedia } from "@/assets/assets";
 import Image from "next/image";
 import React from "react";
+import { useEffect } from "react";
 import { useI18n } from "@/app/i18n/I18nProvider";
+
+const TENOR_EMBED_SCRIPT = "https://tenor.com/embed.js";
+
+// Replace these placeholders when the projects have public URLs.
+const PROJECT_LINKS = {
+  Accord: "#",
+  Copilot: "#",
+};
+
+function TenorGif() {
+  useEffect(() => {
+    if (document.querySelector(`script[src="${TENOR_EMBED_SCRIPT}"]`)) {
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = TENOR_EMBED_SCRIPT;
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
+  return (
+    <div className="w-full overflow-hidden rounded-3xl border border-gray-200 bg-gray-50 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+      <div
+        className="tenor-gif-embed"
+        data-postid="12951837333217512032"
+        data-share-method="host"
+        data-aspect-ratio="0.566265"
+        data-width="100%"
+      >
+        <a
+          href="https://tenor.com/view/elmo-door-hi-gif-12951837333217512032"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Elmo Door GIF
+        </a>{" "}
+        from{" "}
+        <a
+          href="https://tenor.com/search/elmo-gifs"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Elmo GIFs
+        </a>
+      </div>
+    </div>
+  );
+}
 
 function About() {
   const { t } = useI18n();
+
+  const renderAboutBody = (body) => {
+    const parts = [];
+    const projectToken = /\[\[(Accord|Copilot)\]\]/g;
+    let lastIndex = 0;
+    let match;
+
+    while ((match = projectToken.exec(body)) !== null) {
+      if (match.index > lastIndex) {
+        parts.push(body.slice(lastIndex, match.index));
+      }
+
+      const projectName = match[1];
+      parts.push(
+        <a
+          key={`${projectName}-${match.index}`}
+          href={PROJECT_LINKS[projectName]}
+          aria-label={`${projectName} project link (coming soon)`}
+          onClick={(event) => event.preventDefault()}
+          className="font-medium text-gray-900 underline decoration-gray-400 underline-offset-4 transition-colors hover:decoration-gray-900 dark:text-white dark:decoration-gray-500 dark:hover:decoration-white"
+        >
+          {projectName}
+        </a>,
+      );
+      lastIndex = projectToken.lastIndex;
+    }
+
+    parts.push(body.slice(lastIndex));
+    return parts;
+  };
 
   const infoText = [
     {
@@ -28,18 +108,19 @@ function About() {
       <h4 className="text-center mb-2 text-lg font-Ovo">{t("about.kicker")}</h4>
       <h2 className="text-center text-5xl font-Ovo">{t("about.title")}</h2>
       <div className="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
-        {/* image left */}
-        <div className="w-64 sm:w-80 rounded-3xl max-w-none">
-          <Image
-            src={assets.user_image}
-            alt=""
-            className="w-full rounded-3xl"
-          />
+        {/* visual column: compact side-by-side composition on larger screens */}
+        <div className="grid w-full max-w-[36rem] grid-cols-1 items-start gap-6 sm:grid-cols-[minmax(0,1.35fr)_minmax(0,0.65fr)] lg:w-[38%] lg:max-w-none lg:gap-5">
+          <div className="w-64 justify-self-center rounded-3xl sm:w-80 lg:w-full">
+            <Image src={assets.user_image} alt="" className="w-full rounded-3xl" />
+          </div>
+          <div className="w-full max-w-[12rem] justify-self-center sm:max-w-none">
+            <TenorGif />
+          </div>
         </div>
 
         {/* second column */}
-        <div className="flex-1">
-          <p className="mb-10 max-w-2xl font-Ovo">{t("about.body")}</p>
+        <div className="min-w-0 flex-1">
+          <p className="mb-10 max-w-2xl font-Ovo">{renderAboutBody(t("about.body"))}</p>
           <ul className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
             {infoList.map(({ icon }, index) => (
               <li
